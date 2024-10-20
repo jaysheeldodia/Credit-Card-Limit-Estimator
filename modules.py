@@ -1,5 +1,4 @@
 import pandas as pd
-from sklearn.preprocessing import StandardScaler
 from joblib import load
 
 labels = ["Gender_Female", "Gender_Male", "Student_No", "Student_Yes",

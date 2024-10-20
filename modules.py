@@ -4,7 +4,6 @@ from joblib import load
 labels = ["Gender_Female", "Gender_Male", "Student_No", "Student_Yes",
         "Married_No", "Married_Yes", "Ethnicity_African American",
         "Ethnicity_Asian", "Ethnicity_Caucasian"]
-sc = StandardScaler()
 
 def load_model():
     model = load("LimitEstimator.pkl")

@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request
-from modules import create_df, load_model
+from modules import create_df, model
 bp = Blueprint("pages", __name__)
 
 @bp.route("/")
@@ -30,8 +30,6 @@ def submit():
                         Education=Education, Gender_Male=Gender_Male, Student_Yes=Student_Yes,
                        Married_Yes=Married_Yes, Ethnicity_Caucasian=Ethnicity_Caucasian, 
                        Ethnicity_Asian=Ethnicity_Asian, Balance=Balance)
-
-        model = load_model()
 
         prediction = f"{float(model.predict(df)[0]):.2f}"
 

@@ -10,8 +10,6 @@ def index():
 def submit():
     if request.method == "POST":
 
-        data = {}
-        
         Income = float(request.form['income'].strip())
         Rating = int(request.form['rating'])
         Cards = int(request.form['cards'])

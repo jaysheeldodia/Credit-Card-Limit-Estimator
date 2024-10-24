@@ -12,7 +12,7 @@ def submit():
 
         data = {}
         
-        Income = request.form['income']
+        Income = float(request.form['income'].strip())
         Rating = int(request.form['rating'])
         Cards = int(request.form['cards'])
         Age = int(request.form['age'])

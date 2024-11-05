@@ -9,6 +9,9 @@ The **Credit Card Limit Estimator** is a machine learning project designed to pr
 
 This project is useful for financial institutions to evaluate customer creditworthiness, improve risk management, and offer customized credit solutions.
 
+## Note
+The Web Application might take a few seconds/minutes to run when you are running it for the first time or after a long time. This is because it runs on a free server. This server shuts down upon inactivity and starts again once a request to the server is made. 
+
 ## Table of Contents
 - [Overview](#overview)
 - [Features](#features)

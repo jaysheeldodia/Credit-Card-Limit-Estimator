@@ -5,7 +5,7 @@ labels = ["Gender_Female", "Gender_Male", "Student_No", "Student_Yes",
         "Married_No", "Married_Yes", "Ethnicity_African American",
         "Ethnicity_Asian", "Ethnicity_Caucasian"]
 
-model = load("LimitEstimator.pkl")
+model = load("model/LimitEstimator.pkl")
 
 def create_df(**kwargs):
     columns = ["Income", "Rating", "Cards", "Age", "Education", "Balance",

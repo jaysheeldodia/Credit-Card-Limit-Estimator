@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Credit Limit Prediction</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
 <body>
@@ -15,30 +15,37 @@
             <div class="form-row">
                 <div class="form-group">
                     <label for="income">Income:</label>
-                    <input type="text" id="income" name="income" placeholder="10-186" required>
+                    <input type="number" min="10" max="186" step="0.01" id="income" name="income" placeholder="10-186" required>
                 </div>
                 <div class="form-group">
                     <label for="rating">Rating:</label>
-                    <input type="number" id="rating" name="rating" placeholder="93-982" required>
+                    <input type="number" min="93" max="982" step="1" id="rating" name="rating" placeholder="93-982" required>
                 </div>
             </div>
 
             <div class="form-row">
                 <div class="form-group">
                     <label for="cards">Cards:</label>
-                    <input type="number" id="cards" name="cards" placeholder="1-9" required>
+                    <input type="number" min="1" max="9" step="1" id="cards" name="cards" placeholder="1-9" required>
                 </div>
                 <div class="form-group">
                     <label for="age">Age:</label>
-                    <input type="number" id="age" name="age" placeholder="23-98" required>
+                    <input type="number" min="23" max="98" step="1" id="age" name="age" placeholder="23-98" required>
                 </div>
             </div>
 
             <div class="form-row">
                 <div class="form-group">
                     <label for="education">Education:</label>
-                    <input type="number" id="education" name="education" placeholder="5-20" required>
+                    <input type="number" min="5" max="20" step="1" id="education" name="education" placeholder="5-20" required>
                 </div>
+                <div class="form-group">
+                    <label for="balance">Balance:</label>
+                    <input type="number" min="0" max="1999" step="1" id="balance" name="balance" placeholder="0-1999" required>
+                </div>
+            </div>
+
+            <div class="form-row">
                 <div class="form-group">
                     <label for="gender">Gender:</label>
                     <select id="gender" name="gender">
@@ -46,9 +53,6 @@
                         <option value="Female">Female</option>
                     </select>
                 </div>
-            </div>
-
-            <div class="form-row">
                 <div class="form-group">
                     <label for="student">Student:</label>
                     <select id="student" name="student">
@@ -56,16 +60,16 @@
                         <option value="Yes">Yes</option>
                     </select>
                 </div>
+            </div>
+
+            <div class="form-row">
                 <div class="form-group">
                     <label for="married">Married:</label>
-                    <select id="married" name="married" >
+                    <select id="married" name="married">
                         <option value="No">No</option>
                         <option value="Yes" selected>Yes</option>
                     </select>
                 </div>
-            </div>
-
-            <div class="form-row">
                 <div class="form-group">
                     <label for="ethnicity">Ethnicity:</label>
                     <select id="ethnicity" name="ethnicity">
@@ -74,10 +78,7 @@
                         <option value="C">African American</option>
                     </select>
                 </div>
-                <div class="form-group">
-                    <label for="balance">Balance:</label>
-                    <input type="number" id="balance" name="balance" placeholder="0-1999" required>
-                </div>
+                
             </div>
 
             <div class="center">
@@ -87,12 +88,13 @@
 
         <!-- Display prediction result -->
         {% if prediction_text %}
-            <h3>{{ prediction_text }}</h3>
+        <h3>{{ prediction_text }}</h3>
         {% elif error_message %}
-            <h3>{{ error_message }}</h3>
+        <h3>{{ error_message }}</h3>
         {% endif %}
-        
+
     </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 
 </html>
